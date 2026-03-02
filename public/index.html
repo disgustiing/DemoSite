@@ -18,18 +18,12 @@
 
             fetch("/submit", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ phone, code })
             })
             .then(res => res.json())
-            .then(data => {
-                alert("Данные отправлены!");
-            })
-            .catch(err => {
-                alert("Ошибка отправки: " + err);
-            });
+            .then(data => alert(data.message))
+            .catch(err => alert("Ошибка отправки: " + err));
         }
     </script>
 </body>
